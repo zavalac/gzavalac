@@ -1,0 +1,57 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+
+public class Ejercicio1 {
+    static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    static PrintStream out = System.out;
+    static final double DESCUENTO_PEAJE = 0.20;
+    static final double CARRIL_PREFERNCIAL = 0.15;
+    public static void main(final String[] args) throws IOException {
+        
+        int vehiculo, horaPico, carrilPreferencial;
+        
+        double precioVehiculoTotal = 0;
+        double precioA = 75;
+        double precioB = 100;
+        double precioC = 200;
+        double precioT = 100;
+
+        out.println("Inserte tipo de vehículo (1 para automovil, 2 para bus, 3 para camion, 4 para taxi): ");
+        vehiculo = Integer.parseInt(in.readLine());
+        
+        out.println("¿Es hora pico? Si lo es, introduzca 25. De lo contrario, ingrese hora: ");
+        horaPico = Integer.parseInt(in.readLine());
+        
+        out.println("si pasa por carril preferencial digite 26");
+        carrilPreferencial = Integer.parseInt(in.readLine());
+        
+        switch (vehiculo) {
+            case 1:
+            precioVehiculoTotal = precioA;
+            out.println(precioVehiculoTotal);
+            break;
+            case 2:
+            precioVehiculoTotal = precioB;
+            out.println(precioVehiculoTotal);
+            break;
+            case 3:
+            precioVehiculoTotal = precioC;
+            out.println(precioVehiculoTotal);
+            break;
+            case 4:
+            precioVehiculoTotal = precioT;
+            out.println(precioVehiculoTotal);
+            break;
+            default:
+            out.println("Valor invalido");
+        }
+        if (horaPico == 25) {
+            
+             out.println(precioVehiculoTotal - (precioVehiculoTotal*DESCUENTO_PEAJE));
+        }
+        
+        if (carrilPreferencial == 26) {
+        
+        }
